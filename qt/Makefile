@@ -9,8 +9,8 @@ FLAVOR_FILE = flavor-select
 arch_triplet := $(shell dpkg-architecture -q DEB_TARGET_MULTIARCH)
 
 define QT5_CONF
-./usr/lib/$(arch_triplet)/qt5/bin
-./usr/lib/$(arch_triplet)
+./opt/qt512/bin
+./opt/qt512/lib
 endef
 export QT5_CONF
 

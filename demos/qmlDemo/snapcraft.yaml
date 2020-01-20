@@ -1,4 +1,4 @@
-name: qt5-application
+name: qt5-qml-application
 version: "2"
 summary: Qt5 Application Example
 description: A simple text editor
@@ -8,29 +8,21 @@ base: core18
 icon: snap/gui/qt5-application.png
 
 apps:
-  qt5-application:
+  qt5-qml-application:
     environment:
       # Use GTK3 cursor theme, icon theme and open/save file dialogs.
       QT_QPA_PLATFORMTHEME: gtk3    
-    command: desktop-launch application
+    command: desktop-launch qmlapplication
   #  environment:
   #    LD_LIBRARY_PATH: $SNAP/opt/qt512/lib:$LD_LIBRARY_PATH
     plugs: [unity7, home]
 
 parts:
-  application:
+  qmlapplication:
     source: src/
     plugin: qmakeppa
-    qt-version: qt5
-
-  # This part installs the qt5 dependencies and the `desktop-launch` script
-  # which initialises desktop features such as fonts, themes and the XDG
-  # environment.
-  # 
-  # It is copied straight from the snapcraft desktop helpers project. Please
-  # periodically check the source for updates and copy the changes.
-  #    https://github.com/ubuntu/snapcraft-desktop-helpers/blob/master/snapcraft.yaml
-  # 
+    after: [desktop-qt5]
+    options: ["CONFIG+=my_option"]
 
   ppa:
     plugin: nil
@@ -62,6 +54,8 @@ parts:
       - gnome-themes-standard
       - shared-mime-info
       - qt512base
+      - qt512quickcontrols
+      - qt512quickcontrols2
       - libgdk-pixbuf2.0-0
       - qt512svg # for loading icon themes which are svg
       - locales-all

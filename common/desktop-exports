@@ -60,14 +60,14 @@ if [ -z "$RUNTIME" ]; then
 else
   # add general paths not added by snapcraft due to runtime snap
   append_dir LD_LIBRARY_PATH $RUNTIME/lib/$ARCH
-  append_dir LD_LIBRARY_PATH $RUNTIME/usr/lib
-  append_dir LD_LIBRARY_PATH $RUNTIME/usr/lib/$ARCH
-  append_dir PATH $RUNTIME/usr/bin
+  append_dir LD_LIBRARY_PATH $RUNTIME/opt/qt512/lib
+  append_dir LD_LIBRARY_PATH $RUNTIME/opt/qt512/lib/$ARCH
+  append_dir PATH $RUNTIME/opt/qt512/bin
   WITH_RUNTIME=yes
 fi
 
 # XKB config
-export XKB_CONFIG_ROOT=$RUNTIME/usr/share/X11/xkb
+export XKB_CONFIG_ROOT=$RUNTIMEu/share/X11/xkb
 
 # Give XOpenIM a chance to locate locale data.
 # This is required for text input to work in SDL2 games.
