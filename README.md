@@ -6,4 +6,4 @@ You may install from one of the Qt 5.12.X PPAs such as https://launchpad.net/~be
 
 A QML application demo was added along with an example for pulling in a qmake CONFIG option.  
 
-This has only been tested on Ubuntu 18.04
+This has only been tested on Ubuntu 18.04 and 16.04
