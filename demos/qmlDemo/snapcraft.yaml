@@ -13,8 +13,6 @@ apps:
       # Use GTK3 cursor theme, icon theme and open/save file dialogs.
       QT_QPA_PLATFORMTHEME: gtk3    
     command: desktop-launch qmlapplication
-  #  environment:
-  #    LD_LIBRARY_PATH: $SNAP/opt/qt512/lib:$LD_LIBRARY_PATH
     plugs: [unity7, home]
 
 parts:
