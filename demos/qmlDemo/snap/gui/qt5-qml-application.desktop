@@ -1,0 +1,13 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Qt5App
+GenericName=A simple text editor
+Comment=A simple text editor
+Exec=qt5-qml-application
+Icon=${SNAP}/meta/gui/qt5-application.png
+Terminal=false
+Type=Application
+StartupNotify=false
+Categories=Application;Game
+Keywords=mc-installer;
+Name[en_US]=qt5-qml-application.desktop
