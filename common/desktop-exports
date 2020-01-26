@@ -250,6 +250,10 @@ if [ -n "$XDG_RUNTIME_DIR" ]; then
     fi
 fi
 
+append_dir PATH $RUNTIME/snap
+append_dir PATH $RUNTIME/snap/command-chain
+append_dir LD_LIBRARY_PATH $SNAP/usr/lib/x86_64-linux-gnu/alsa-lib
+
 # GI repository
 [ "$WITH_RUNTIME" = yes ] && prepend_dir GI_TYPELIB_PATH $RUNTIME/usr/lib/$ARCH/girepository-1.0
 [ "$WITH_RUNTIME" = yes ] && prepend_dir GI_TYPELIB_PATH $RUNTIME/usr/lib/girepository-1.0
